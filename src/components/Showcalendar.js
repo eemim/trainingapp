@@ -10,7 +10,7 @@ import { format, parseISO } from "date-fns";
 
 export default function ShowCalendar() {
   const locales = {
-    'fi': fi,
+    'fi-FI': fi,
   };
 
   const [trainings, setTrainings] = useState([]);
@@ -34,7 +34,8 @@ export default function ShowCalendar() {
 
 
   const events = trainings.map(training => ({
-    title: training.activity+" "+training.duration+ " min.",
+    title: training.activity+" "+training.duration+ " min. "+
+    training.customer.firstname+" "+training.customer.lastname,
     start: parseISO(training.date),
     end: parseISO(training.date),
   }));

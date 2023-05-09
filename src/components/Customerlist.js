@@ -137,10 +137,9 @@ export default function Customerlist() {
           rowData={customers}
           animateRows={true}
           pagination={true}
-          sideBar={true}
         ></AgGridReact>
         <Button>
-        <CSVLink style={{color: "#02C262", fontSize: 26}}data={customers} headers={headers} filename="customerlist" separator={";"} > Download </CSVLink>
+        <CSVLink style={{color: "#02C262", fontSize: 16}}data={customers} headers={headers} filename="customerlist" separator={";"} > Customerlist.csv </CSVLink>
         </Button>
       </div>
       </div>

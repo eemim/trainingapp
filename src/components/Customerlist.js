@@ -60,15 +60,20 @@ export default function Customerlist() {
   };
 
   const deleteCustomer = (params) => {
+    const customerId = params.data.links[0].href.match(/\/(\d+)$/)[1];
+    
+
     if (window.confirm("Are you sure you want to delete this customer?")) {
-      fetch(params, { method: "DELETE" })
+      fetch(`https://traineeapp.azurewebsites.net/api/customers/${customerId}`, { method: "DELETE" })
         .then((res) => fetchData())
         .catch((err) => console.error(err));
     }
   };
 
   const updateCustomer = (customer, params) => {
-    fetch(params, {
+    const customerId = params.match(/\/(\d+)$/)[1];
+    console.log(params)
+    fetch(`https://traineeapp.azurewebsites.net/api/customers/${customerId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -103,7 +108,7 @@ export default function Customerlist() {
       
       cellRenderer: (params) => (
         <IconButton
-          onClick={() => deleteCustomer(params.data.links[0].href)}
+          onClick={() => deleteCustomer(params)}
         >
           <DeleteIcon color="error"/>
         </IconButton>

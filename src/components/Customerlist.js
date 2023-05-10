@@ -16,7 +16,7 @@ export default function Customerlist() {
   useEffect(() => fetchData(), []);
 
   const fetchData = () => {
-    fetch("http://traineeapp.azurewebsites.net/api/customers")
+    fetch("https://traineeapp.azurewebsites.net/api/customers")
       .then((response) => response.json())
       .then((responseData) => {
         console.log(responseData);
@@ -27,7 +27,7 @@ export default function Customerlist() {
   };
 
   const saveCustomer = (customer) => {
-    fetch("http://traineeapp.azurewebsites.net/api/customers", {
+    fetch("https://traineeapp.azurewebsites.net/api/customers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function Customerlist() {
   const saveTraining = (training) => {
     console.log("Training data:", training);
   
-    fetch("http://traineeapp.azurewebsites.net/api/trainings", {
+    fetch("https://traineeapp.azurewebsites.net/api/trainings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

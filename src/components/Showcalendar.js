@@ -18,7 +18,7 @@ export default function ShowCalendar() {
   useEffect(() => fetchData(), []);
 
   const fetchData = () => {
-    fetch("http://traineeapp.azurewebsites.net/gettrainings")
+    fetch("https://traineeapp.azurewebsites.net/gettrainings")
       .then((response) => response.json())
       .then((responseData) => setTrainings(responseData))
       .catch((err) => console.error(err));

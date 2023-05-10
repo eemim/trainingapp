@@ -14,7 +14,7 @@ export default function ShowStatistic(){
   Chart.register(...registerables);
 
   const fetchData = () => {
-    fetch("http://traineeapp.azurewebsites.net/api/trainings")
+    fetch("https://traineeapp.azurewebsites.net/api/trainings")
       .then((response) => response.json())
       .then((responseData) => {
         const updatedData = responseData.content.map((training) => {

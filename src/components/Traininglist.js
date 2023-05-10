@@ -15,7 +15,7 @@ export default function Traininglist() {
   useEffect(() => fetchData(), []);
 
   const fetchData = () => {
-    fetch("http://traineeapp.azurewebsites.net/gettrainings")
+    fetch("https://traineeapp.azurewebsites.net/gettrainings")
       .then((response) => response.json())
       .then((responseData) => setTrainings(responseData))
       .catch((err) => console.error(err));
@@ -38,7 +38,7 @@ export default function Traininglist() {
     const trainingId = params.data.id;
   
     if (window.confirm("Are you sure you want to delete this training?")) {
-      fetch(`http://traineeapp.azurewebsites.net/api/trainings/${trainingId}`, { method: "DELETE" })
+      fetch(`https://traineeapp.azurewebsites.net/api/trainings/${trainingId}`, { method: "DELETE" })
         .then((res) => fetchData())
         .catch((err) => console.error(err));
     }

@@ -9,7 +9,6 @@ import { CSVLink } from "react-csv";
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import Button from "@mui/material/Button";
-import DownloadIcon from '@mui/icons-material/Download';
 
 export default function Customerlist() {
   const [customers, setCustomers] = useState([]);
